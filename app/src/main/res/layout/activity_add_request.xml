@@ -23,8 +23,9 @@
             android:layout_weight="1"
             android:adjustViewBounds="false"
             android:cropToPadding="false"
+            android:background="@color/colorAccentR"
             app:layout_constraintEnd_toStartOf="@+id/imageButton6"
-            app:srcCompat="?android:attr/actionModeWebSearchDrawable"
+            app:srcCompat="@drawable/ic_face_black_48dp"
             tools:layout_editor_absoluteY="322dp" />
 
         <ImageButton
@@ -36,8 +37,9 @@
             android:layout_weight="1"
             android:adjustViewBounds="false"
             android:cropToPadding="false"
+            android:background="@color/colorAccentR"
             app:layout_constraintEnd_toStartOf="@+id/imageButton6"
-            app:srcCompat="?android:attr/actionModeWebSearchDrawable"
+            app:srcCompat="@drawable/ic_create_black_48dp"
             tools:layout_editor_absoluteY="322dp" />
 
         <ImageButton
@@ -48,9 +50,10 @@
             android:layout_marginEnd="0dp"
             android:layout_weight="1"
             android:adjustViewBounds="false"
+            android:background="@color/colorAccentR"
             android:cropToPadding="false"
             app:layout_constraintEnd_toStartOf="@+id/imageButton6"
-            app:srcCompat="?android:attr/actionModeWebSearchDrawable"
+            app:srcCompat="@drawable/ic_search_black_48dp"
             tools:layout_editor_absoluteY="322dp" />
 
         <ImageButton
@@ -61,9 +64,10 @@
             android:layout_marginEnd="0dp"
             android:layout_weight="1"
             android:adjustViewBounds="false"
+            android:background="@color/colorAccentR"
             android:cropToPadding="false"
             app:layout_constraintEnd_toStartOf="@+id/imageButton6"
-            app:srcCompat="?android:attr/actionModeWebSearchDrawable"
+            app:srcCompat="@drawable/ic_turned_in_not_black_48dp"
             tools:layout_editor_absoluteY="322dp" />
 
     </LinearLayout>
