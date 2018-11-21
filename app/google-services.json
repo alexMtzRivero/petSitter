@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "965199046151",
+    "firebase_url": "https://petsittter-bd896.firebaseio.com",
+    "project_id": "petsittter-bd896",
+    "storage_bucket": "petsittter-bd896.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:965199046151:android:4e8f82778ed880af",
+        "android_client_info": {
+          "package_name": "com.example.alets.petsitter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "965199046151-t1uakernlv9eg1kugl8v1j29i58cnfd4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.alets.petsitter",
+            "certificate_hash": "e5a75212fae53da46522841c47c7d46d27ef4be9"
+          }
+        },
+        {
+          "client_id": "965199046151-7olb36m9pk2jur2ko4thvjh2m5671oij.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATDbk_79UXN4f8a1jFsNuq8g3qeVTlp7s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "965199046151-7olb36m9pk2jur2ko4thvjh2m5671oij.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
