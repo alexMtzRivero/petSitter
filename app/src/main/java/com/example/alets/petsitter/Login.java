@@ -35,16 +35,13 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-
         mAuth = FirebaseAuth.getInstance();
         test();
 
 
-
-
     }
-    
+
+
     private void test() {
 
         singInUser("alejandro.martinez.0598@gmail.com","123456");
@@ -54,7 +51,7 @@ public class Login extends AppCompatActivity {
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Personne p = new Personne(null,"username","0769675322",null,"grenoble","38000");
+                Personne p = new Personne(null,"alejandro.martinez.059@gmail.com","username","0769675322",null,"grenoble","38000");
                 createUser("alejandro.martinez.059@gmail.com","123456",p);
             }
         });
@@ -116,6 +113,7 @@ public class Login extends AppCompatActivity {
 
                             // ads the user object to firestore
                             personne.setId(mAuth.getCurrentUser().getUid());
+                            personne.setPhoto(mAuth.getCurrentUser().getPhotoUrl().toString());
                             db.collection("users")
                                     .add(personne)
                                     .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
@@ -130,10 +128,6 @@ public class Login extends AppCompatActivity {
                                             Log.w(TAG, "Error adding document", e);
                                         }
                                     });
-
-
-
-
 
                             updateUI(user);
                         } else {

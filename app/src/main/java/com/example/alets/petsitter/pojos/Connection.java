@@ -1,29 +1,40 @@
 package com.example.alets.petsitter.pojos;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Connection {
 
-    String IdPersonneAnimal,IdGardeur,description;
-    String [] animaux;
+    String id, idPersonneAnimal,idGardeur,description;
+    String [] idAnimaux;
     int prix;
     Date date;
 
-    public Connection(String idPersonneAnimal, String idGardeur, String description, String[] animaux, int prix, Date date) {
-        IdPersonneAnimal = idPersonneAnimal;
-        IdGardeur = idGardeur;
+    public Connection(String id,String idPersonneAnimal, String idGardeur, String description, String[] animaux, int prix, Date date) {
+        this.id =id;
+        this.idPersonneAnimal = idPersonneAnimal;
+        this.idGardeur = idGardeur;
         this.description = description;
-        this.animaux = animaux;
+        this.idAnimaux = animaux;
         this.prix = prix;
         this.date = date;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public void setIdPersonneAnimal(String idPersonneAnimal) {
-        IdPersonneAnimal = idPersonneAnimal;
+        this.idPersonneAnimal = idPersonneAnimal;
     }
 
     public void setIdGardeur(String idGardeur) {
-        IdGardeur = idGardeur;
+        this.idGardeur = idGardeur;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public void setDescription(String description) {
@@ -31,7 +42,7 @@ public class Connection {
     }
 
     public void setAnimaux(String[] animaux) {
-        this.animaux = animaux;
+        this.idAnimaux = animaux;
     }
 
     public void setPrix(int prix) {
@@ -43,11 +54,11 @@ public class Connection {
     }
 
     public String getIdPersonneAnimal() {
-        return IdPersonneAnimal;
+        return idPersonneAnimal;
     }
 
     public String getIdGardeur() {
-        return IdGardeur;
+        return idGardeur;
     }
 
     public String getDescription() {
@@ -55,7 +66,7 @@ public class Connection {
     }
 
     public String[] getAnimaux() {
-        return animaux;
+        return idAnimaux;
     }
 
     public int getPrix() {
@@ -64,5 +75,19 @@ public class Connection {
 
     public Date getDate() {
         return date;
+    }
+
+    public Map<String,Object> toHashmap() {
+        HashMap<String,Object> mMap = new HashMap<>();
+
+        mMap.put("id",id);
+        mMap.put("idPersonneAnimal",  idPersonneAnimal);
+        mMap.put("idGardeur",  idGardeur);
+        mMap.put("description",  description);
+        mMap.put("idAnimaux",  idAnimaux);
+        mMap.put("prix",  prix);
+        mMap.put("date",  date);
+
+        return mMap;
     }
 }

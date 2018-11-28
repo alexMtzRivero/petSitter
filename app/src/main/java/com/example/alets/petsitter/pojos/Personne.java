@@ -2,15 +2,24 @@ package com.example.alets.petsitter.pojos;
 
 public class Personne {
 
-   private String id,userName,telephone,photo,direction,codePostale;
+   private String id,userName,eMail,telephone,photo,direction,codePostale;
 
-    public Personne(String id, String userName, String telephone, String photo, String direction, String codePostale) {
+    public Personne(String id,String eMail, String userName, String telephone, String photo, String direction, String codePostale) {
         this.id = id;
         this.userName = userName;
         this.telephone = telephone;
+        this.eMail = eMail;
         this.photo = photo;
         this.direction = direction;
         this.codePostale = codePostale;
+    }
+
+    public void seteMail(String eMail) {
+        this.eMail = eMail;
+    }
+
+    public String geteMail() {
+        return eMail;
     }
 
     public void setId(String id) {
