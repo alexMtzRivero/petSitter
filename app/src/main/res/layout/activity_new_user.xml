@@ -91,17 +91,35 @@
 
             <Button
                 android:id="@+id/button6"
+                style="@style/Widget.AppCompat.Button.Small"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="32dp"
+                android:layout_marginBottom="2dp"
                 android:layout_marginEnd="64dp"
                 android:layout_marginStart="64dp"
+                android:layout_marginTop="8dp"
                 android:background="@color/colorPrimaryDark"
+                android:elevation="0dp"
                 android:text="Créer mon compte"
-                android:textColor="@color/colorLight"
+                android:textAppearance="@android:style/TextAppearance.Material.WindowTitle"
+                android:textColor="@color/common_google_signin_btn_text_dark_default"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintEnd_toEndOf="@+id/editText2"
+                app:layout_constraintHorizontal_bias="0.538"
+                app:layout_constraintStart_toStartOf="@+id/editText2"
+                app:layout_constraintTop_toTopOf="@+id/editText2" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="64dp"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="16dp"
+                android:text="J'ai déjà un compte"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold" />
 
         </LinearLayout>
     </ScrollView>
