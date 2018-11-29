@@ -33,7 +33,7 @@
                 android:textColor="@color/colorAccentR" />
 
             <EditText
-                android:id="@+id/editText5"
+                android:id="@+id/createName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="2dp"
@@ -50,7 +50,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/editText6"
+                android:id="@+id/createFirstName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="2dp"
@@ -64,25 +64,9 @@
                 app:layout_constraintBottom_toTopOf="@+id/editText4"
                 app:layout_constraintStart_toStartOf="@+id/editText5" />
 
-            <EditText
-                android:id="@+id/editText4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="2dp"
-                android:layout_marginEnd="64dp"
-                android:layout_marginStart="64dp"
-                android:layout_marginTop="8dp"
-                android:textColor="@color/colorText"
-                android:ems="10"
-                android:hint="Mail"
-                android:inputType="textEmailAddress"
-                app:layout_constraintBottom_toTopOf="@+id/editText7"
-                app:layout_constraintEnd_toEndOf="@+id/editText6"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@+id/editText6" />
 
             <EditText
-                android:id="@+id/editText15"
+                android:id="@+id/createPhoneNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="2dp"
@@ -95,7 +79,7 @@
                 android:inputType="phone" />
 
             <EditText
-                android:id="@+id/editText10"
+                android:id="@+id/createAdress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="2dp"
@@ -111,7 +95,7 @@
                 app:layout_constraintStart_toStartOf="@+id/editText9" />
 
             <EditText
-                android:id="@+id/editText3"
+                android:id="@+id/createCityNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="2dp"
@@ -124,7 +108,7 @@
                 android:inputType="number" />
 
             <EditText
-                android:id="@+id/editText7"
+                android:id="@+id/createCity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="2dp"
@@ -136,20 +120,53 @@
                 android:ems="10"
                 android:inputType="textPostalAddress" />
 
-            <Switch
-                android:id="@+id/switch1"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="2dp"
-                android:layout_marginEnd="64dp"
-                android:layout_marginStart="64dp"
-                android:layout_marginTop="8dp"
-                android:textColor="@color/colorText"
-                android:text="J'ai un animal"
-                android:textSize="18sp" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+
+                <TextView
+                    android:id="@+id/textPet"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginEnd="64dp"
+                    android:layout_marginStart="64dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+
+                    android:text="J'ai un animal"
+                    android:textColor="@color/colorText"
+                    android:textSize="18sp" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <RadioButton
+                        android:id="@+id/createRadioButtonYesPet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/colorText"
+                        android:layout_weight="2"
+                        android:text="Oui" />
+
+                    <RadioButton
+                        android:id="@+id/createRadioButtonNoPet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textColor="@color/colorText"
+                        android:text="Non" />
+
+                </RadioGroup>
+            </LinearLayout>
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/buttonCreateProfil"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="2dp"

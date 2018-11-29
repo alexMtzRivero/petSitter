@@ -51,7 +51,7 @@
                 app:layout_constraintVertical_bias="0.0" />
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/loginMail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -68,8 +68,9 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+
             <EditText
-                android:id="@+id/editText2"
+                android:id="@+id/loginPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="64dp"
@@ -84,7 +85,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/editText" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/loginForgotPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="64dp"
@@ -96,7 +97,7 @@
                 android:textColor="@color/colorPrimary" />
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/buttonLoginConnexion"
                 style="@style/Widget.AppCompat.Button.Small"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -116,7 +117,7 @@
                 app:layout_constraintTop_toTopOf="@+id/editText2" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/loginCreateAccount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="64dp"
