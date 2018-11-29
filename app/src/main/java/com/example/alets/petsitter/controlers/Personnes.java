@@ -14,6 +14,7 @@ public class Personnes {
 
     static FirebaseFirestore db = FirebaseFirestore.getInstance();
     static  private  String TAG = "tag";
+    static private Personne je;
     public static Personne get(){
 
         db.collection("users")
@@ -32,7 +33,16 @@ public class Personnes {
                 });
         return null;
     }
+    public static void setActualUser(Personne p){
+        je = p;
+    }
+
+
+    public static Personne getCurrentUser() {
+        return je;
+        }
+    }
 
 
 
-}
+

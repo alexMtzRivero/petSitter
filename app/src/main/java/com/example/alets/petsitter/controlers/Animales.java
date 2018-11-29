@@ -15,28 +15,35 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.ArrayList;
+
 public class Animales {
     static FirebaseFirestore db = FirebaseFirestore.getInstance();
     static String TAG = "TAG";
 
-    public  void getAll(){
-        db.collection("users")
+    public static void getAll(final AnimalListner al , String idUser){
+        db.collection("users").document(idUser).collection("animales")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
+                            ArrayList<Animal> animals = new ArrayList<>();
                             for (DocumentSnapshot document : task.getResult()) {
+                                Animal a = document.toObject(Animal.class);
+                                animals.add(a);
                                 Log.d(TAG, document.getId() + " => " + document.getData());
                             }
+                            al.onLoadAnimal( animals);
                         } else {
+                            al.onLoadAnimal((Animal) null);
                             Log.w(TAG, "Error getting documents.", task.getException());
                         }
                     }
                 });
     }
 
-    public void add(final AnimalListner al, Animal a , Personne p){
+    public static void add(final AnimalListner al, Animal a , Personne p){
         db.collection("users").document(p.getId()).collection("animales")
                 .add(a)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {

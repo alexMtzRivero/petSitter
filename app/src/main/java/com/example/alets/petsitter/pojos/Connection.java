@@ -2,16 +2,18 @@ package com.example.alets.petsitter.pojos;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Connection {
 
     String id, idPersonneAnimal,idGardeur,description;
-    String [] idAnimaux;
+    List<String> idAnimaux;
     int prix;
     Date date;
 
-    public Connection(String id,String idPersonneAnimal, String idGardeur, String description, String[] animaux, int prix, Date date) {
+    public Connection(){};
+    public Connection(String id,String idPersonneAnimal, String idGardeur, String description, List<String> animaux, int prix, Date date) {
         this.id =id;
         this.idPersonneAnimal = idPersonneAnimal;
         this.idGardeur = idGardeur;
@@ -41,7 +43,7 @@ public class Connection {
         this.description = description;
     }
 
-    public void setAnimaux(String[] animaux) {
+    public void setAnimaux(List<String> animaux) {
         this.idAnimaux = animaux;
     }
 
@@ -65,7 +67,7 @@ public class Connection {
         return description;
     }
 
-    public String[] getAnimaux() {
+    public List<String> getAnimaux() {
         return idAnimaux;
     }
 
