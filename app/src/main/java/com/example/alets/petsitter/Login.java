@@ -47,14 +47,14 @@ public class Login extends AppCompatActivity {
         singInUser("alejandro.martinez.0598@gmail.com","123456");
 
 
-        Button b = findViewById(R.id.button2);
+        /*Button b = findViewById(R.id.button2);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Personne p = new Personne(null,"alejandro.martinez.059@gmail.com","username","0769675322",null,"grenoble","38000");
                 createUser("alejandro.martinez.059@gmail.com","123456",p);
             }
-        });
+        });*/
     }
 
 
