@@ -1,9 +1,14 @@
 package com.example.alets.petsitter.pojos;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Personne {
 
    private String id,userName,eMail,telephone,photo,direction,codePostale;
 
+
+   public Personne(){}
     public Personne(String id,String eMail, String userName, String telephone, String photo, String direction, String codePostale) {
         this.id = id;
         this.userName = userName;
@@ -68,5 +73,17 @@ public class Personne {
 
     public String getCodePostale() {
         return codePostale;
+    }
+
+    public Map<String,Object> toHashmap() {
+        HashMap<String,Object> mMap = new HashMap<>();
+        mMap.put("id",id);
+        mMap.put("userName",userName);
+        mMap.put("telephone",telephone);
+        mMap.put("eMail",eMail);
+        mMap.put("photo",photo);
+        mMap.put("direction",direction);
+        mMap.put("codePostale",codePostale);
+        return mMap;
     }
 }

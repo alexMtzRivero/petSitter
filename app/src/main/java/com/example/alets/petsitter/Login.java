@@ -1,5 +1,6 @@
 package com.example.alets.petsitter;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.nfc.Tag;
 import android.support.annotation.NonNull;
@@ -8,6 +9,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.alets.petsitter.pojos.Personne;
@@ -31,14 +34,53 @@ public class Login extends AppCompatActivity {
     private FirebaseAuth mAuth;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+    TextView tvCreerComte,tvPassOublie;
+    Button bConnexion;
+    EditText etMail,etPass;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         mAuth = FirebaseAuth.getInstance();
-        test();
+        //test();
+
+        tvCreerComte = findViewById(R.id.tVCreerCompte);
+        tvPassOublie=findViewById(R.id.tVPassOublie);
+        bConnexion=findViewById(R.id.bConnexion);
+        etMail=findViewById(R.id.eTMail);
+        etPass=findViewById(R.id.eTPass);
 
 
+        bConnexion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                validate();
+
+            }
+        });
+        tvCreerComte.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Login.this,NewUser.class);
+
+                startActivity(i);
+            }
+        });
+    }
+
+    private void validate() {
+        if (!vide(etMail) && !vide(etPass)){
+            singInUser(etMail.getText().toString(),etPass.getText().toString());
+        }
+    }
+    private boolean vide(EditText et) {
+        if (et.getText().toString().equals("")) {
+            et.setError("obligatoire");
+            et.requestFocus();
+            return true;
+        }
+        return false;
     }
 
 
@@ -46,7 +88,7 @@ public class Login extends AppCompatActivity {
 
         singInUser("alejandro.martinez.0598@gmail.com","123456");
 
-
+/*
         Button b = findViewById(R.id.button2);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +97,7 @@ public class Login extends AppCompatActivity {
                 createUser("alejandro.martinez.059@gmail.com","123456",p);
             }
         });
+     */
     }
 
 
@@ -67,20 +110,27 @@ public class Login extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
+                            goToMain();
+
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(getApplicationContext(), "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getApplicationContext(), "Authentication failed.", Toast.LENGTH_SHORT).show();
                             updateUI(null);
                         }
 
                         // ...
                     }
+
+
                 });
     }
 
+    private void goToMain() {
+        Intent i = new Intent(Login.this,Feed.class);
+
+        startActivity(i);
+    }
     public void getUser(){
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
@@ -98,55 +148,12 @@ public class Login extends AppCompatActivity {
             String uid = user.getUid();
         }
     }
-    public void createUser(String email, String password, final Personne personne) {
 
-
-        mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d("holo", "createUserWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-
-                            // ads the user object to firestore
-                            personne.setId(mAuth.getCurrentUser().getUid());
-                            personne.setPhoto(mAuth.getCurrentUser().getPhotoUrl().toString());
-                            db.collection("users")
-                                    .add(personne)
-                                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                                        @Override
-                                        public void onSuccess(DocumentReference documentReference) {
-                                            Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
-                                        }
-                                    })
-                                    .addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception e) {
-                                            Log.w(TAG, "Error adding document", e);
-                                        }
-                                    });
-
-                            updateUI(user);
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w("holo", "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(getApplicationContext(), "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-                            updateUI(null);
-                        }
-
-                        // ...
-                    }
-                });
-    }
     public void updateUI( FirebaseUser  mUser){
         if(mUser !=null)
             Toast.makeText(getApplicationContext(),mUser.getEmail(),Toast.LENGTH_LONG).show();
         else
-            Toast.makeText(getApplicationContext(),"no se pudo compa",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"Utilizateur ou Mot de pase Incorrectes",Toast.LENGTH_LONG).show();
 
     }
     @Override

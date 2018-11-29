@@ -48,7 +48,7 @@
                 app:layout_constraintVertical_bias="0.0" />
 
             <EditText
-                android:id="@+id/newMail"
+                android:id="@+id/etMail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -62,7 +62,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
-                android:id="@+id/newPassword"
+                android:id="@+id/editText13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -76,7 +76,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
-                android:id="@+id/newConfirmPassword"
+                android:id="@+id/editText14"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -90,7 +90,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <Button
-                android:id="@+id/buttonCreateAccount"
+                android:id="@+id/button6"
                 style="@style/Widget.AppCompat.Button.Small"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -110,12 +110,13 @@
                 app:layout_constraintTop_toTopOf="@+id/editText2" />
 
             <TextView
-                android:id="@+id/newAlreadyAccount"
+                android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="64dp"
                 android:layout_marginStart="64dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
                 android:text="J'ai déjà un compte"
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimary"

@@ -33,7 +33,7 @@
                 android:textColor="@color/colorAccentR" />
 
             <EditText
-                android:id="@+id/createName"
+                android:id="@+id/etNom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="2dp"
@@ -50,7 +50,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/createFirstName"
+                android:id="@+id/etPrenom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="2dp"
@@ -64,9 +64,8 @@
                 app:layout_constraintBottom_toTopOf="@+id/editText4"
                 app:layout_constraintStart_toStartOf="@+id/editText5" />
 
-
             <EditText
-                android:id="@+id/createPhoneNumber"
+                android:id="@+id/etTelephone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="2dp"
@@ -79,7 +78,7 @@
                 android:inputType="phone" />
 
             <EditText
-                android:id="@+id/createAdress"
+                android:id="@+id/etAdresse"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="2dp"
@@ -95,7 +94,7 @@
                 app:layout_constraintStart_toStartOf="@+id/editText9" />
 
             <EditText
-                android:id="@+id/createCityNumber"
+                android:id="@+id/etPostal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="2dp"
@@ -108,7 +107,7 @@
                 android:inputType="number" />
 
             <EditText
-                android:id="@+id/createCity"
+                android:id="@+id/etVille"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="2dp"
@@ -166,10 +165,10 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/buttonCreateProfil"
+                android:id="@+id/bConfirm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="2dp"
+                android:layout_marginBottom="16dp"
                 android:layout_marginEnd="64dp"
                 android:layout_marginStart="64dp"
                 android:layout_marginTop="8dp"
@@ -178,7 +177,8 @@
                 android:textAppearance="@android:style/TextAppearance.Material.WindowTitle"
                 android:textColor="@color/common_google_signin_btn_text_dark_default"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                />
 
         </LinearLayout>
     </ScrollView>
