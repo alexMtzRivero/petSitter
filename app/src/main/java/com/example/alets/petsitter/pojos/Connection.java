@@ -79,6 +79,9 @@ public class Connection implements Serializable {
     public Date getDate() {
         return date;
     }
+    public String getDateString() {
+        return date.toString();
+    }
 
     public Map<String,Object> toHashmap() {
         HashMap<String,Object> mMap = new HashMap<>();
