@@ -1,13 +1,18 @@
 package com.example.alets.petsitter.adapters;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.alets.petsitter.ConectionDetails;
+import com.example.alets.petsitter.Login;
 import com.example.alets.petsitter.R;
+import com.example.alets.petsitter.TestActivity;
 import com.example.alets.petsitter.pojos.FullInformation;
 
 import java.util.ArrayList;
@@ -27,6 +32,7 @@ public class PetListAdapter extends RecyclerView.Adapter<PetListAdapter.MyViewHo
         public MyViewHolder(View v) {
             super(v);
             mView = v;
+
             tvDateBegin = v.findViewById(R.id.tvDateBegin);
             tvDateEnd = v.findViewById(R.id.tvDateEnd);
             tvName = v.findViewById(R.id.tvName);
@@ -36,6 +42,8 @@ public class PetListAdapter extends RecyclerView.Adapter<PetListAdapter.MyViewHo
             tvPlace = v.findViewById(R.id.tvPlace);
             imageView = v.findViewById(R.id.imageView);
         }
+
+
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)

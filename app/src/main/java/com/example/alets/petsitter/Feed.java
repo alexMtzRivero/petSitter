@@ -1,11 +1,17 @@
 package com.example.alets.petsitter;
 
+import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.alets.petsitter.adapters.PetListAdapter;
@@ -31,6 +37,11 @@ public class Feed extends AppCompatActivity implements AnimalListner,ConnectionL
     private ArrayList<FullInformation> myDataset;
     private ArrayList<Connection> connections;
 
+
+
+
+    private ImageButton menuProfil;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +59,18 @@ public class Feed extends AppCompatActivity implements AnimalListner,ConnectionL
         // specify an adapter (see also next example)
         mAdapter = new PetListAdapter(myDataset);
         mRecyclerView.setAdapter(mAdapter);
+
+
+        menuProfil = findViewById(R.id.menuProfil);
+        //button for profil
+        menuProfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Feed.this, AddAnimal.class);
+                startActivity(i);
+            }
+        });
+
 
     }
 

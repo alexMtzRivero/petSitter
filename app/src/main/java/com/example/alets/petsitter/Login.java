@@ -134,8 +134,8 @@ public class Login extends AppCompatActivity {
 
     private void goToMain() {
         //todo cambiar esto feed.class
+       // Intent i = new Intent(Login.this,TestActivity.class);
         Intent i = new Intent(Login.this,Feed.class);
-
         startActivity(i);
     }
     public void getUser(){

@@ -42,8 +42,9 @@
             android:layout_marginEnd="64dp"
             android:layout_marginStart="64dp"
             android:layout_marginTop="8dp"
+            android:entries="@array/Species"
             android:fadeScrollbars="true"
-            android:textColor="@color/colorText" />
+            android:textColor="@color/colorText"></Spinner>
 
         <EditText
             android:id="@+id/petName"

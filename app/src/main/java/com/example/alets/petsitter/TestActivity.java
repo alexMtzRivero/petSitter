@@ -72,7 +72,7 @@ import java.util.List;
                 @Override
                 public void onClick(View view) {
                     ArrayList<String> petIds = new ArrayList<>();
-                    petIds.add("D5T8H50xzU6GBTI10P7I");
+                    petIds.add("m40a1YBCs2pU4gFsaaQC");
                     Connection c = new Connection(null, "Ohc5eC7JFLXsyCxCCHVXx0V46a63", "u0tYEcIPdWM6U7I3nJFeuVyGPgD3\n", "porfa culo ", petIds, 23, new Date(25051998));
                     Connections.add(TestActivity.this, c);
                 }
