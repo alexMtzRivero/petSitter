@@ -1,29 +1,45 @@
 package com.example.alets.petsitter.pojos;
 
 import com.example.alets.petsitter.controlers.Animales;
+import com.example.alets.petsitter.controlers.FullInfoController;
 import com.example.alets.petsitter.controlers.Personnes;
 import com.example.alets.petsitter.interfaces.AnimalListner;
 import com.example.alets.petsitter.interfaces.FullConnectionListener;
 import com.example.alets.petsitter.interfaces.PersonneListener;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FullInformation implements PersonneListener,AnimalListner {
+public class FullInformation implements  Serializable {
     private Connection c;
     private Personne pAnimal,pGardeur;
     private ArrayList<Animal> animals;
     private Boolean aSearched;
-    private FullConnectionListener fullConnectionListener;
 
-    public  FullInformation(FullConnectionListener fcl,Connection con){
-        c = con;
-        fullConnectionListener = fcl;
-        if (c.idGardeur!=null)
-        Personnes.get(FullInformation.this,c.idGardeur);
-        if(c.idAnimaux != null)
-        Personnes.get(FullInformation.this,c.idPersonneAnimal);
 
+
+    public  FullInformation(){
+    }
+
+    public void setC(Connection c) {
+        this.c = c;
+    }
+
+    public void setpAnimal(Personne pAnimal) {
+        this.pAnimal = pAnimal;
+    }
+
+    public void setpGardeur(Personne pGardeur) {
+        this.pGardeur = pGardeur;
+    }
+
+    public void setAnimals(ArrayList<Animal> animals) {
+        this.animals = animals;
+    }
+
+    public void setaSearched(Boolean aSearched) {
+        this.aSearched = aSearched;
     }
 
     public Connection getC() {
@@ -55,51 +71,5 @@ public class FullInformation implements PersonneListener,AnimalListner {
         return pAnimal !=null && pGardeur != null && aSearched ;
     }
 
-    @Override
-    public void onLoadAnimal(Animal a) {
 
-    }
-
-    @Override
-    public void onLoadAnimal(List<Animal> a) {
-                animals = (ArrayList<Animal>) a;
-                aSearched = true ;
-                fullConnectionListener.informationLoaded(FullInformation.this);
-    }
-
-    @Override
-    public void onAnimalCreated(Boolean created) {
-
-    }
-
-    @Override
-    public void onAnimalUpdated(Boolean created) {
-
-    }
-
-    @Override
-    public void onPersonneLoaded(Personne p) {
-        if (p.getId().equals(c.idGardeur))
-            pGardeur = p;
-        else{
-            pAnimal = p;
-            Animales.getAll(FullInformation.this,p.getId());
-        }
-
-    }
-
-    @Override
-    public void onPersonneLoades(List<Personne> p) {
-
-    }
-
-    @Override
-    public void onPersonneCreated(Boolean created) {
-
-    }
-
-    @Override
-    public void onPersonneUpdate(Boolean created) {
-
-    }
 }

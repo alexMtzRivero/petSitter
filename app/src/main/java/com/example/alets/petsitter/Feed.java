@@ -18,6 +18,7 @@ import com.example.alets.petsitter.adapters.PetListAdapter;
 import com.example.alets.petsitter.controlers.Animales;
 
 import com.example.alets.petsitter.controlers.Connections;
+import com.example.alets.petsitter.controlers.FullInfoController;
 import com.example.alets.petsitter.controlers.Personnes;
 import com.example.alets.petsitter.interfaces.AnimalListner;
 import com.example.alets.petsitter.interfaces.ConnectionListener;
@@ -110,7 +111,7 @@ public class Feed extends AppCompatActivity implements AnimalListner,ConnectionL
     @Override
     public void onConnectionLoaded(List<Connection>con) {
                 for(Connection c : con){
-                    new FullInformation(this,c);
+                    new FullInfoController(this,c);
                 }
     }
 

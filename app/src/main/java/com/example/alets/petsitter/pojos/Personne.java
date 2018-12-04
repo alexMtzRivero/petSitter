@@ -1,9 +1,10 @@
 package com.example.alets.petsitter.pojos;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Personne {
+public class Personne implements Serializable {
 
    private String id,userName,eMail,telephone,photo,direction,codePostale;
 

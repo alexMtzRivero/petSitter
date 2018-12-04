@@ -15,6 +15,7 @@ import com.example.alets.petsitter.R;
 import com.example.alets.petsitter.TestActivity;
 import com.example.alets.petsitter.pojos.FullInformation;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class PetListAdapter extends RecyclerView.Adapter<PetListAdapter.MyViewHolder> {
@@ -67,8 +68,16 @@ public class PetListAdapter extends RecyclerView.Adapter<PetListAdapter.MyViewHo
     public void onBindViewHolder(MyViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        FullInformation fi= mDataset.get(position);
+        final FullInformation fi= mDataset.get(position);
 
+        holder.mView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(view.getContext(),ConectionDetails.class);
+                i.putExtra("fullInfo",  fi);
+                view.getContext().startActivity(i);
+            }
+        });
         holder.tvDateBegin.setText(fi.getC().getDate().toString());
         holder.tvName.setText(fi.getAnimals().get(0).getPrenom());
         holder.tvSpecies.setText(fi.getAnimals().get(0).getEspece());

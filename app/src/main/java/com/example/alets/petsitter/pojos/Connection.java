@@ -1,11 +1,12 @@
 package com.example.alets.petsitter.pojos;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Connection {
+public class Connection implements Serializable {
 
     String id, idPersonneAnimal,idGardeur,description;
     List<String> idAnimaux;

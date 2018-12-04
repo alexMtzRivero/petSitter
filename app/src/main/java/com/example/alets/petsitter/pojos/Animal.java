@@ -1,10 +1,11 @@
 package com.example.alets.petsitter.pojos;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Animal {
+public class Animal implements Serializable {
 
     private String id,espece,prenom,age;
     private List<String> soin ,photos;
