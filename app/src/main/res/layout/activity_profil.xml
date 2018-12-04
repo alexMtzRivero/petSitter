@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textColor="@color/colorPrimaryDark"
+    tools:ignore="MissingConstraints">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp">
+
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Mon profil"
+                android:textAppearance="@android:style/TextAppearance.Material.WindowTitle"
+                android:textColor="@color/colorAccentR" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_pets_teal_a400_48dp" />
+
+            <TextView
+                android:id="@+id/etNom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Nom"
+                android:textColor="@color/colorText"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toTopOf="@+id/editText6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/etPrenom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Prénom"
+                android:textColor="@color/colorText"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toTopOf="@+id/editText4"
+                app:layout_constraintStart_toStartOf="@+id/editText5" />
+
+            <TextView
+                android:id="@+id/etTelephone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:inputType="phone"
+                android:text="Numéro de téléphone"
+                android:textColor="@color/colorText"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/etAdresse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:inputType="textPostalAddress"
+                android:text="Adresse"
+                android:textColor="@color/colorText"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+                app:layout_constraintEnd_toEndOf="@+id/editText9"
+                app:layout_constraintStart_toStartOf="@+id/editText9" />
+
+            <TextView
+                android:id="@+id/etPostal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:inputType="number"
+                android:text="Code postal"
+                android:textColor="@color/colorText"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/etVille"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:inputType="textPostalAddress"
+                android:text="Ville"
+                android:textColor="@color/colorText"
+                android:textSize="18dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+
+                <TextView
+                    android:id="@+id/textPet"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+
+                    android:text="J'ai un animal"
+                    android:textColor="@color/colorText"
+                    android:textSize="18sp" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/createRadioButtonYesPet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:text="Oui"
+                        android:textColor="@color/colorText" />
+
+                    <RadioButton
+                        android:id="@+id/createRadioButtonNoPet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="Non"
+                        android:textColor="@color/colorText" />
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        app:srcCompat="@drawable/ic_pets_teal_a400_48dp" />
+
+                </RadioGroup>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvTitle2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Profil de l'animal"
+                android:textAppearance="@android:style/TextAppearance.Material.WindowTitle"
+                android:textColor="@color/colorAccentR" />
+
+            <ImageView
+                android:id="@+id/imgViewPet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_pets_teal_a400_48dp" />
+
+            <TextView
+                android:id="@+id/etName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:text="Nom"
+                android:textColor="@color/colorText"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/etSpecies"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:text="Espece"
+                android:textColor="@color/colorText"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/etAge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="8dp"
+                android:text="18 ans"
+                android:textColor="@color/colorText"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/tvMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="8dp"
+                android:text="Chat casanier mais très gentil. Aime les calins et les radiateurs. Demande toujours de l'attention. Rêve de partir en vacances à la plage. Aime l'eau (surtoût la baignoire et le robinet qui coule)."
+                android:textColor="@color/colorText"
+                android:textSize="18dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
