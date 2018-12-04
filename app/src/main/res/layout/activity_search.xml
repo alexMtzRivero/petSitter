@@ -6,145 +6,92 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-    <LinearLayout
-        android:layout_width="415dp"
-        android:layout_height="544dp"
-        android:layout_marginEnd="8dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.6">
-
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:layout_marginEnd="64dp"
-            android:layout_marginStart="64dp"
-            android:layout_marginTop="16dp"
-            android:text="Trouver un animal à garder"
-            android:textAppearance="@android:style/TextAppearance.Material.WindowTitle"
-            android:textColor="@color/colorAccentR" />
-
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="2dp"
-            android:layout_marginEnd="64dp"
-            android:layout_marginStart="64dp"
-            android:layout_marginTop="8dp"
-            android:text="Je cherche à garder un"
-            android:textColor="@color/colorText" />
-
-        <Spinner
-            android:id="@+id/searchSpinnerSpecies"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom ="2dp"
-            android:layout_marginEnd="64dp"
-            android:layout_marginStart="64dp"
-            android:layout_marginTop="8dp"
-            android:fadeScrollbars="true"
-            android:textColor="@color/colorText" />
-
-        <TextView
-            android:id="@+id/textView45"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="2dp"
-            android:layout_marginEnd="64dp"
-            android:layout_marginStart="64dp"
-            android:layout_marginTop="8dp"
-            android:text="à"
-            android:textColor="@color/colorText" />
-
-        <Spinner
-            android:id="@+id/searchSpinnerLocalisation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="2dp"
-            android:layout_marginEnd="64dp"
-            android:layout_marginStart="64dp"
-            android:layout_marginTop="8dp"
-            android:fadeScrollbars="true"
-            android:textColor="@color/colorText" />
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="59dp"
-        android:weightSum="4"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        android:layout_height="match_parent">
 
-        <ImageButton
-            android:id="@+id/menuProfil"
-            style="@android:style/Widget.ImageButton"
-            android:layout_width="1dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginEnd="0dp"
-            android:layout_weight="1"
-            android:adjustViewBounds="false"
-            android:background="@color/colorAccentR"
-            android:cropToPadding="false"
-            app:layout_constraintEnd_toStartOf="@+id/imageButton6"
-            app:srcCompat="@drawable/ic_face_black_48dp"
-            tools:layout_editor_absoluteY="322dp" />
+            android:orientation="vertical"
+            android:layout_margin="16dp">
 
-        <ImageButton
-            android:id="@+id/menuProposePet"
-            style="@android:style/Widget.ImageButton"
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_marginEnd="0dp"
-            android:layout_weight="1"
-            android:adjustViewBounds="false"
-            android:background="@color/colorAccentR"
-            android:cropToPadding="false"
-            app:layout_constraintEnd_toStartOf="@+id/imageButton6"
-            app:srcCompat="@drawable/ic_create_black_48dp"
-            tools:layout_editor_absoluteY="322dp" />
+            <TextView
+                android:id="@+id/tvSearch1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Trouver un animal à garder"
+                android:textAppearance="@android:style/TextAppearance.Material.WindowTitle"
+                android:textColor="@color/colorAccentR" />
 
-        <ImageButton
-            android:id="@+id/menuSearchPet"
-            style="@android:style/Widget.ImageButton"
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_marginEnd="0dp"
-            android:layout_weight="1"
-            android:adjustViewBounds="false"
-            android:background="@color/colorAccentR"
-            android:cropToPadding="false"
-            app:layout_constraintEnd_toStartOf="@+id/imageButton6"
-            app:srcCompat="@drawable/ic_search_black_48dp"
-            tools:layout_editor_absoluteY="322dp" />
 
-        <ImageButton
-            android:id="@+id/menuFilter"
-            style="@android:style/Widget.ImageButton"
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_marginEnd="0dp"
-            android:layout_weight="1"
-            android:adjustViewBounds="false"
-            android:background="@color/colorAccentR"
-            android:cropToPadding="false"
-            app:layout_constraintEnd_toStartOf="@+id/imageButton6"
-            app:srcCompat="@drawable/ic_turned_in_not_black_48dp"
-            tools:layout_editor_absoluteY="322dp" />
+            <TextView
+                android:id="@+id/tvSearch4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Je cherche à garder un"
+                android:textColor="@color/colorText"
+                android:textSize="18dp"/>
 
-    </LinearLayout>
+            <Spinner
+                android:id="@+id/spnSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fadeScrollbars="true"
+                android:textColor="@color/colorText" />
 
+            <TextView
+                android:id="@+id/tvSearch2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="à"
+                android:textSize="18dp"
+                android:textColor="@color/colorText" />
+
+            <EditText
+                android:id="@+id/etSearchCity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="ville" />
+
+
+            <Button
+                android:id="@+id/btnSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="42dp"
+                android:background="@color/colorPrimary"
+                android:text="Enregistrer mes parametres de recherche"
+                android:textAppearance="@android:style/TextAppearance.Material.WindowTitle"
+                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="42dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="42dp"
+            android:layout_marginStart="24dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="Publier ma demande"
+            android:textAppearance="@android:style/TextAppearance.Material.WindowTitle"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        </LinearLayout>
+    </ScrollView>
 
     </android.support.constraint.ConstraintLayout>
