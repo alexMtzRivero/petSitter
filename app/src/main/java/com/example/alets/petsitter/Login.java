@@ -106,8 +106,6 @@ public class Login extends AppCompatActivity {
                             //Toast.makeText(getApplicationContext(), "Authentication failed.", Toast.LENGTH_SHORT).show();
                             updateUI(null);
                         }
-
-                        // ...
                     }
 
 
@@ -135,6 +133,7 @@ public class Login extends AppCompatActivity {
     }
 
     private void goToMain() {
+        //todo cambiar esto feed.class
         Intent i = new Intent(Login.this,Feed.class);
 
         startActivity(i);
