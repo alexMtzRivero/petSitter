@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.alets.petsitter.controlers.Personnes;
 import com.example.alets.petsitter.pojos.Personne;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -22,6 +23,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -43,7 +45,7 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         mAuth = FirebaseAuth.getInstance();
-        //test();
+
 
         tvCreerComte = findViewById(R.id.tVCreerCompte);
         tvPassOublie=findViewById(R.id.tVPassOublie);
@@ -84,20 +86,6 @@ public class Login extends AppCompatActivity {
     }
 
 
-    private void test() {
-
-        singInUser("alejandro.martinez.0598@gmail.com","123456");
-
-
-        /*Button b = findViewById(R.id.button2);
-        b.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Personne p = new Personne(null,"alejandro.martinez.059@gmail.com","username","0769675322",null,"grenoble","38000");
-                createUser("alejandro.martinez.059@gmail.com","123456",p);
-            }
-        });*/
-    }
 
 
     public void singInUser(String email, String password){
@@ -109,7 +97,8 @@ public class Login extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            goToMain();
+                            setMyDataToStatic();
+
 
                         } else {
                             // If sign in fails, display a message to the user.
@@ -123,6 +112,26 @@ public class Login extends AppCompatActivity {
 
 
                 });
+    }
+
+    private void setMyDataToStatic() {
+        db.collection("users").document(mAuth.getCurrentUser().getUid()).get(
+
+        ).addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        Personnes.setActualUser(documentSnapshot.toObject(Personne.class));
+                        goToMain();
+                    }
+                }
+        ).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.w(TAG, "signInWithEmail:failure", e.getCause());
+                Toast.makeText(getApplicationContext(), "Authentication failed.", Toast.LENGTH_SHORT).show();
+
+            }
+        });
     }
 
     private void goToMain() {
