@@ -22,6 +22,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.List;
+
 public class CreateProfil extends AppCompatActivity  implements PersonneListener{
 
     private FirebaseAuth mAuth;
@@ -106,7 +108,7 @@ public class CreateProfil extends AppCompatActivity  implements PersonneListener
     }
 
     @Override
-    public void onPersonneLoades(Personne[] p) {
+    public void onPersonneLoades(List<Personne> p) {
 
     }
 
