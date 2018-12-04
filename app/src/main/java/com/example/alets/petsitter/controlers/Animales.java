@@ -31,10 +31,11 @@ public class Animales {
                             ArrayList<Animal> animals = new ArrayList<>();
                             for (DocumentSnapshot document : task.getResult()) {
                                 Animal a = document.toObject(Animal.class);
+                                a.setId(document.getId());
                                 animals.add(a);
                                 Log.d(TAG, document.getId() + " => " + document.getData());
                             }
-                            al.onLoadAnimal( animals);
+                            al.onLoadAnimal(animals);
                         } else {
                             al.onLoadAnimal((Animal) null);
                             Log.w(TAG, "Error getting documents.", task.getException());
@@ -42,6 +43,25 @@ public class Animales {
                     }
                 });
     }
+
+
+   public  void update(final AnimalListner al, Animal a , Personne p){
+       db.collection("users").document(p.getId()).collection("animales").document(a.getId()).update(a.toHashmap())
+        .addOnSuccessListener(
+                new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                             al.onAnimalUpdated(true);
+                        }
+                }
+        ).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+
+            }
+        });
+
+   }
 
     public static void add(final AnimalListner al, Animal a , Personne p){
         db.collection("users").document(p.getId()).collection("animales")

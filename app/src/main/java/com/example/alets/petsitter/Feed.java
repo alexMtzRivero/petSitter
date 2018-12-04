@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.alets.petsitter.controlers.Animales;
+import com.example.alets.petsitter.controlers.Connections;
 import com.example.alets.petsitter.controlers.Personnes;
 import com.example.alets.petsitter.interfaces.AnimalListner;
 import com.example.alets.petsitter.interfaces.ConnectionListener;
@@ -28,11 +29,10 @@ public class Feed extends AppCompatActivity implements AnimalListner,ConnectionL
         setContentView(R.layout.activity_feed);
 
         /*
-        TODO AJOUTER animal a base de donees
-        TODO recuperer mes Anumaux
+
 
         TODO ajouter conection dAnimal
-        TODO ajouter conection de Chercheur
+
 
         TODO recuperer conexion sans chercheur
         TODO recuperer conexion sans animal
@@ -62,6 +62,8 @@ public class Feed extends AppCompatActivity implements AnimalListner,ConnectionL
             @Override
             public void onClick(View view) {
 
+                Connection c = new Connection(null,null,Personnes.getCurrentUser().getId(),null,null,0,null);
+                Connections.add(Feed.this,c);
             }
         });
         b[3].setOnClickListener(new View.OnClickListener() {
@@ -89,9 +91,9 @@ public class Feed extends AppCompatActivity implements AnimalListner,ConnectionL
     }
 
     private void ajouterAnimal() {
-        List<String> soin = Arrays.asList("pasealo puto"," dale de comer");
+        List<String> soin = Arrays.asList("pasealo "," dale de comer");
         Animal a = new Animal(null,"chien","Max","2" ,soin,null);
-        Animales.add(Feed.this, a,Personnes.getCurrentUser());
+        Animales.add( Feed.this, a,Personnes.getCurrentUser());
     }
 
     @Override
@@ -107,11 +109,12 @@ public class Feed extends AppCompatActivity implements AnimalListner,ConnectionL
         for(Animal an : a){
            Log.e("animal",an.getPrenom());
         }
+        Toast.makeText(getApplicationContext(),"animals Loaded",Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void onAnimalCreated(Boolean created) {
-        Toast.makeText(Feed.this,"animal Created",Toast.LENGTH_LONG);
+        Toast.makeText(getApplicationContext(),"animal Created",Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -131,7 +134,9 @@ public class Feed extends AppCompatActivity implements AnimalListner,ConnectionL
 
     @Override
     public void onConectionCreated(Boolean created) {
-
+        if(created){
+            Toast.makeText(getApplicationContext(),"Conection created",Toast.LENGTH_LONG).show();
+        }
     }
 
     @Override
