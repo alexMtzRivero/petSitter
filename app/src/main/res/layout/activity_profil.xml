@@ -226,6 +226,17 @@
                 android:textColor="@color/colorText"
                 android:textSize="18dp" />
 
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Deconnexion"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="12dp"
+                android:textAppearance="@android:style/TextAppearance.Material.WindowTitle"
+                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:background="@color/colorAccentR"/>
+
         </LinearLayout>
 
     </ScrollView>
