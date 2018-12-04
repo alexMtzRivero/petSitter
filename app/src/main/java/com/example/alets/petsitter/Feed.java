@@ -40,7 +40,12 @@ public class Feed extends AppCompatActivity implements AnimalListner,ConnectionL
 
 
 
-
+/*
+    todo mostrar mis conecciones
+    todo mostrar las que tienen cada tip de usuario
+    todo pegar pantalla de creacion de coneccion
+    
+ */
     private ImageButton menuProfil;
 
     @Override

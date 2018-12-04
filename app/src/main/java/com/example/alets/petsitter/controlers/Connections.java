@@ -19,7 +19,12 @@ import java.util.ArrayList;
 public class Connections {
     static FirebaseFirestore db = FirebaseFirestore.getInstance();
     static String TAG = "TAG";
+/*
+query para
+    mis conneciones
 
+
+ */
 
     public static void add(final ConnectionListener connextionListner, Connection con){
         db.collection("connections")
