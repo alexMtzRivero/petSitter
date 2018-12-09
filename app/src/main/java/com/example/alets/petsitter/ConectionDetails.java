@@ -32,7 +32,7 @@ public class ConectionDetails extends AppCompatActivity implements ConnectionLis
 
         final FullInformation fullInformation = (FullInformation) getIntent().getSerializableExtra("fullInfo");
 
-        bCandidature = findViewById(R.id.buttonCreateProfil);
+        bCandidature = findViewById(R.id.buttonCandidature);
         bCandidature.setOnClickListener(
                 new View.OnClickListener() {
                     @Override

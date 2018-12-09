@@ -53,7 +53,23 @@ public class Feed extends AppCompatActivity implements AnimalListner,ConnectionL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
         myDataset = new ArrayList<>();
-        Connections.getAll(Feed.this);
+
+
+        String typeDeRecherche = getIntent().getStringExtra("TypeDeRecherche");
+        switch (typeDeRecherche){
+            case "avecAnimal":
+                Connections.getAllChechent(Feed.this);
+                break;
+            case "sansAnimal":
+                Connections.getAllgerdeurs(Feed.this);
+                break;
+
+                default:
+                    Connections.getAll(Feed.this);
+                    break;
+
+        }
+
 
         mRecyclerView = findViewById(R.id.mainRecyclerView);
 
@@ -72,7 +88,7 @@ public class Feed extends AppCompatActivity implements AnimalListner,ConnectionL
         menuProfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Feed.this, AddAnimal.class);
+                Intent i = new Intent(Feed.this, UserProfile.class);
                 startActivity(i);
             }
         });

@@ -225,6 +225,16 @@
                 android:text="Chat casanier mais très gentil. Aime les calins et les radiateurs. Demande toujours de l'attention. Rêve de partir en vacances à la plage. Aime l'eau (surtoût la baignoire et le robinet qui coule)."
                 android:textColor="@color/colorText"
                 android:textSize="18dp" />
+            <Button
+                android:id="@+id/bAjouterAnimal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ajouter Animal"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="12dp"
+                android:textAppearance="@android:style/TextAppearance.Material.WindowTitle"
+                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:background="@color/colorPrimary"/>
 
             <Button
                 android:id="@+id/button2"

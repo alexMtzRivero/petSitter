@@ -21,7 +21,9 @@
         <activity android:name=".NewUser" />
         <activity android:name=".TestActivity" />
         <activity android:name=".AddAnimal" />
-        <activity android:name=".ConectionDetails"></activity>
+        <activity android:name=".ConectionDetails" />
+        <activity android:name=".UserProfile" />
+        <activity android:name=".Choice"></activity>
     </application>
 
 </manifest>
