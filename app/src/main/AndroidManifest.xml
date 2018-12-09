@@ -23,6 +23,7 @@
         <activity android:name=".AddAnimal" />
         <activity android:name=".ConectionDetails" />
         <activity android:name=".UserProfile" />
+        <activity android:name=".AddRequest" />
         <activity android:name=".Choice"></activity>
     </application>
 

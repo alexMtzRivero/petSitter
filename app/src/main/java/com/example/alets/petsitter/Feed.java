@@ -46,7 +46,7 @@ public class Feed extends AppCompatActivity implements AnimalListner,ConnectionL
     todo pegar pantalla de creacion de coneccion
     
  */
-    private ImageButton menuProfil;
+    private ImageButton menuProfil,menuProposePet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +55,11 @@ public class Feed extends AppCompatActivity implements AnimalListner,ConnectionL
         myDataset = new ArrayList<>();
 
 
-        String typeDeRecherche = getIntent().getStringExtra("TypeDeRecherche");
+        String typeDeRecherche="";
+        typeDeRecherche = getIntent().getStringExtra("TypeDeRecherche");
+
         switch (typeDeRecherche){
+
             case "avecAnimal":
                 Connections.getAllChechent(Feed.this);
                 break;
@@ -84,12 +87,21 @@ public class Feed extends AppCompatActivity implements AnimalListner,ConnectionL
 
 
         menuProfil = findViewById(R.id.menuProfil);
+        menuProposePet = findViewById(R.id.menuProposePet);
+
         //button for profil
         menuProfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(Feed.this, UserProfile.class);
                 startActivity(i);
+            }
+        });
+        menuProposePet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Feed.this, AddRequest.class);
+               startActivity(i);
             }
         });
 
@@ -134,6 +146,7 @@ public class Feed extends AppCompatActivity implements AnimalListner,ConnectionL
                 for(Connection c : con){
                     new FullInfoController(this,c);
                 }
+                Log.e("conn","/////////////ejecutado");
     }
 
     @Override
@@ -150,6 +163,7 @@ public class Feed extends AppCompatActivity implements AnimalListner,ConnectionL
 
     @Override
     public void informationLoaded(FullInformation fullInformation) {
+        //todo fix factorial ading
         myDataset.add(fullInformation);
         mAdapter.setmDataset(myDataset);
         mAdapter.notifyDataSetChanged();

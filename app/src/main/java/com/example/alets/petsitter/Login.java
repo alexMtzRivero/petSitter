@@ -136,6 +136,7 @@ public class Login extends AppCompatActivity {
         //todo cambiar esto feed.class
        // Intent i = new Intent(Login.this,TestActivity.class);
         Intent i = new Intent(Login.this,Feed.class);
+        i.putExtra("TypeDeRecherche","");
         startActivity(i);
     }
     public void getUser(){
