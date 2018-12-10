@@ -46,7 +46,8 @@ public class Feed extends AppCompatActivity implements AnimalListner,ConnectionL
     todo pegar pantalla de creacion de coneccion
     
  */
-    private ImageButton menuProfil,menuProposePet;
+    private ImageButton menuProfil,menuProposePet,menuSearchPet,menuFilter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,11 +65,11 @@ public class Feed extends AppCompatActivity implements AnimalListner,ConnectionL
                 Connections.getAllChechent(Feed.this);
                 break;
             case "sansAnimal":
-                Connections.getAllgerdeurs(Feed.this);
+                Connections.getAllSansGardeurs(Feed.this);
                 break;
 
                 default:
-                    Connections.getAll(Feed.this);
+                    Connections.getAllSansGardeurs(Feed.this);
                     break;
 
         }
@@ -84,10 +85,26 @@ public class Feed extends AppCompatActivity implements AnimalListner,ConnectionL
         // specify an adapter (see also next example)
         mAdapter = new PetListAdapter(myDataset);
         mRecyclerView.setAdapter(mAdapter);
-
+        menuSearchPet = findViewById(R.id.menuSearchPet);
+        menuSearchPet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myDataset = new ArrayList<>();
+                Connections.getAllSansGardeurs(Feed.this);
+            }
+        });
 
         menuProfil = findViewById(R.id.menuProfil);
         menuProposePet = findViewById(R.id.menuProposePet);
+        menuFilter = findViewById(R.id.menuFilter);
+
+        menuFilter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myDataset = new ArrayList<>();
+                Connections.getMyCandidatures(Feed.this);
+            }
+        });
 
         //button for profil
         menuProfil.setOnClickListener(new View.OnClickListener() {
@@ -136,6 +153,10 @@ public class Feed extends AppCompatActivity implements AnimalListner,ConnectionL
 
     }
 
+    /**
+     *
+     * @param con
+     */
     @Override
     public void onConnectionLoaded(Connection con) {
 

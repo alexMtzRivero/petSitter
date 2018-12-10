@@ -93,7 +93,31 @@ query para
                 });
 
     }
-    public  static  void  getAllgerdeurs( final ConnectionListener cl ){
+    public  static  void  getMyCandidatures( final ConnectionListener cl ){
+
+        db.collection("connections").whereEqualTo("idPersonneAnimal",Personnes.getCurrentUser().getId())
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            ArrayList<Connection> connections = new ArrayList<>();
+                            for (DocumentSnapshot document : task.getResult()) {
+                                Connection c = document.toObject(Connection.class);
+                                c.setId(document.getId());
+                                connections.add(c);
+                                cl.onConnectionLoaded(connections);
+                                Log.d(TAG, document.getId() + " => " + document.getData());
+                            }
+                        } else {
+                            cl.onConnectionLoaded((Connection) null);
+                            Log.w(TAG, "Error getting documents.", task.getException());
+                        }
+                    }
+                });
+
+    }
+    public  static  void  getAllSansGardeurs( final ConnectionListener cl ){
 
         db.collection("connections").whereEqualTo("idGardeur",null)
                 .get()

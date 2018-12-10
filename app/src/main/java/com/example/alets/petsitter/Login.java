@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.alets.petsitter.controlers.Animales;
 import com.example.alets.petsitter.controlers.Personnes;
 import com.example.alets.petsitter.pojos.Personne;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -119,6 +120,7 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
                         Personnes.setActualUser(documentSnapshot.toObject(Personne.class));
+                        Animales.setMyStatic();
                         goToMain();
                     }
                 }

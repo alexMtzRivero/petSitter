@@ -10,17 +10,21 @@ import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.example.alets.petsitter.controlers.Animales;
 import com.example.alets.petsitter.controlers.Connections;
 import com.example.alets.petsitter.controlers.Personnes;
 import com.example.alets.petsitter.interfaces.ConnectionListener;
+import com.example.alets.petsitter.pojos.Animal;
 import com.example.alets.petsitter.pojos.Connection;
 import com.example.alets.petsitter.pojos.Personne;
 
@@ -35,7 +39,7 @@ public class AddRequest extends AppCompatActivity implements DatePickerDialog.On
     Button btnRequest;
 
     EditText eTDu,etAu, eTPrix, eTMessage;
-
+    Spinner sAnimaux;
     DatePickerDialog datePickerDialog;
 
     @Override
@@ -47,7 +51,26 @@ public class AddRequest extends AppCompatActivity implements DatePickerDialog.On
         eTDu = findViewById(R.id.eTDu);
         etAu = findViewById(R.id.etAu);
         eTPrix = findViewById(R.id.eTPrix);
+        sAnimaux = findViewById(R.id.spinner3);
         eTMessage = findViewById(R.id.eTMessage);
+        if(Animales.MyAnimalsReady()) {
+            ArrayList<Animal> animals = Animales.getMyAnimals();
+            ArrayList<String> names = new ArrayList<>();
+            for (Animal a : animals){
+                names.add(a.getPrenom());
+            }
+            /*
+             set data into spinner
+            */
+
+
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+                    this, android.R.layout.simple_spinner_item, names);
+
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            sAnimaux.setAdapter(adapter);
+        }
+
 
         eTDu.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -75,14 +98,15 @@ public class AddRequest extends AppCompatActivity implements DatePickerDialog.On
                 public void onClick(View view) {
                     // new conection, set data to connection push data
                      ArrayList<String> array = new ArrayList<>();
-                     array.add("m40a1YBCs2pU4gFsaaQC");//todo chance this id to get pets
+                     array.add(getIdOfAnimal(sAnimaux.getSelectedItem().toString()));
                     Connection connection = new Connection(null,
                             Personnes.getCurrentUser().getId()
                             ,null
                             ,eTMessage.getText().toString()
                             ,array
                             , Integer.parseInt( eTPrix.getText().toString())
-                            ,new Date(eTDu.getText().toString())
+                            ,eTDu.getText().toString()
+                            , etAu.getText().toString()
                             );
                     Connections.add(AddRequest.this,connection);
                 }
@@ -91,6 +115,13 @@ public class AddRequest extends AppCompatActivity implements DatePickerDialog.On
 
     }
 
+    public String getIdOfAnimal(String name){
+        ArrayList<Animal> animals = Animales.getMyAnimals();
+        for(Animal a : animals)
+            if(a.getPrenom().equals(name))
+                return a.getId();
+        return "";
+    }
 
     public  EditText focused(){
         if(eTDu.isFocused())

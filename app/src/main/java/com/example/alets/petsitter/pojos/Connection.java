@@ -8,20 +8,21 @@ import java.util.Map;
 
 public class Connection implements Serializable {
 
-    String id, idPersonneAnimal,idGardeur,description;
+    String id, idPersonneAnimal,idGardeur,description,date,dateFin;
     List<String> idAnimaux;
     int prix;
-    Date date;
+
 
     public Connection(){};
-    public Connection(String id,String idPersonneAnimal, String idGardeur, String description, List<String> animaux, int prix, Date date) {
+    public Connection(String id,String idPersonneAnimal, String idGardeur, String description, List<String> animaux, int prix, String date1,String date2) {
         this.id =id;
         this.idPersonneAnimal = idPersonneAnimal;
         this.idGardeur = idGardeur;
         this.description = description;
         this.idAnimaux = animaux;
         this.prix = prix;
-        this.date = date;
+        this.date = date1;
+        this.dateFin = date2;
     }
 
     public void setId(String id) {
@@ -52,7 +53,7 @@ public class Connection implements Serializable {
         this.prix = prix;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -75,12 +76,15 @@ public class Connection implements Serializable {
     public int getPrix() {
         return prix;
     }
+    public String getPrixString(){
+        return prix+"€/jour";
+    }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
     public String getDateString() {
-        return date.toString();
+        return date;
     }
 
     public Map<String,Object> toHashmap() {

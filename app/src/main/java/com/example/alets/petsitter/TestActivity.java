@@ -64,7 +64,7 @@ import java.util.List;
                 @Override
                 public void onClick(View view) {
 
-                    Connection c = new Connection(null, null, Personnes.getCurrentUser().getId(), null, null, 0, null);
+                    Connection c = new Connection(null, null, Personnes.getCurrentUser().getId(), null, null, 0, null,null);
                     Connections.add(TestActivity.this, c);
                 }
             });
@@ -73,8 +73,8 @@ import java.util.List;
                 public void onClick(View view) {
                     ArrayList<String> petIds = new ArrayList<>();
                     petIds.add("m40a1YBCs2pU4gFsaaQC");
-                    Connection c = new Connection(null, "Ohc5eC7JFLXsyCxCCHVXx0V46a63", "u0tYEcIPdWM6U7I3nJFeuVyGPgD3\n", "porfa culo ", petIds, 23, new Date(25051998));
-                    Connections.add(TestActivity.this, c);
+                   // Connection c = new Connection(null, "Ohc5eC7JFLXsyCxCCHVXx0V46a63", "u0tYEcIPdWM6U7I3nJFeuVyGPgD3\n", "porfa culo ", petIds, 23, new Date(25051998));
+                    //Connections.add(TestActivity.this, c);
                 }
             });
             b[4].setOnClickListener(new View.OnClickListener() {

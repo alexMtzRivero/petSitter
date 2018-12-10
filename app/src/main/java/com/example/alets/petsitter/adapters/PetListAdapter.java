@@ -13,6 +13,7 @@ import com.example.alets.petsitter.ConectionDetails;
 import com.example.alets.petsitter.Login;
 import com.example.alets.petsitter.R;
 import com.example.alets.petsitter.TestActivity;
+import com.example.alets.petsitter.pojos.Animal;
 import com.example.alets.petsitter.pojos.FullInformation;
 
 import java.io.Serializable;
@@ -78,12 +79,15 @@ public class PetListAdapter extends RecyclerView.Adapter<PetListAdapter.MyViewHo
                 view.getContext().startActivity(i);
             }
         });
-        holder.tvDateBegin.setText(fi.getC().getDate().toString());
-        holder.tvName.setText(fi.getAnimals().get(0).getPrenom());
-        holder.tvSpecies.setText(fi.getAnimals().get(0).getEspece());
+
+        Animal a = fi.getAnimalById(fi.getC().getAnimaux().get(0));
+
+        holder.tvDateBegin.setText(fi.getC().getDateString());
+        holder.tvName.setText(a.getPrenom());
+        holder.tvSpecies.setText(a.getEspece());
         holder.tvProprio.setText(fi.getpAnimal().getUserName());
-//        holder.tvPrice.setText(fi.getC().getPrix());
-  //      holder.tvPlace.setText(fi.getpAnimal().getCodePostale());
+        holder.tvPrice.setText(fi.getC().getPrixString());
+        holder.tvPlace.setText(fi.getpAnimal().getCodePostale());
 
     }
     public  void setmDataset(ArrayList<FullInformation> dataset){

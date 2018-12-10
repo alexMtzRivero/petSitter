@@ -59,6 +59,13 @@ public class FullInformation implements  Serializable {
         else
         return  new Personne();
     }
+    public Animal getAnimalById(String id){
+        for(Animal a :animals)
+            if(a.getId().equals(id))
+                return  a;
+
+        return null;
+    }
 
     public ArrayList<Animal> getAnimals() {
         if(animals!=null)

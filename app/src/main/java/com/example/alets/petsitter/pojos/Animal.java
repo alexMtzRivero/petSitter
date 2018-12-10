@@ -10,6 +10,9 @@ public class Animal implements Serializable {
     private String id,espece,prenom,age;
     private List<String> soin ,photos;
 
+    /**
+     * donstructeur  default demandé par firebase
+     */
     public Animal(){}
     public Animal(String id, String espece, String prenom, String age, List<String> soin, List<String> photos) {
         this.id = id;
@@ -68,6 +71,10 @@ public class Animal implements Serializable {
         this.photos = photos;
     }
 
+    /**
+     *
+     * @return hashpap de type "nom Du variable", variabe
+     */
     public Map<String,Object> toHashmap() {
         HashMap<String,Object> mMap = new HashMap<>();
         mMap.put("id",id);

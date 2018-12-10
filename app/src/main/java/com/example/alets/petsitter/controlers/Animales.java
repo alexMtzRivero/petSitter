@@ -19,6 +19,8 @@ import java.util.ArrayList;
 
 public class Animales {
     static FirebaseFirestore db = FirebaseFirestore.getInstance();
+    static ArrayList<Animal> myAnimals;
+    static Boolean myAnimalsReady;
     static String TAG = "TAG";
 
     public static void getAll(final AnimalListner al , String idUser){
@@ -44,8 +46,40 @@ public class Animales {
                 });
     }
 
+    public static void setMyStatic() {
+        db.collection("users").document(Personnes.getCurrentUser().getId()).collection("animales")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            ArrayList<Animal> animals = new ArrayList<>();
+                            for (DocumentSnapshot document : task.getResult()) {
+                                Animal a = document.toObject(Animal.class);
+                                a.setId(document.getId());
+                                animals.add(a);
+                                Log.d(TAG, document.getId() + " => " + document.getData());
+                            }
+                            myAnimals = animals ;
+                            myAnimalsReady = true;
+                        } else {
+                            Log.w(TAG, "Error getting documents.", task.getException());
+                        }
+                    }
+                });
 
-   public  void update(final AnimalListner al, Animal a , Personne p){
+    }
+
+    public static ArrayList<Animal> getMyAnimals() {
+        return myAnimals;
+    }
+
+    public static Boolean MyAnimalsReady() {
+        return myAnimalsReady;
+    }
+
+
+    public  void update(final AnimalListner al, Animal a , Personne p){
        db.collection("users").document(p.getId()).collection("animales").document(a.getId()).update(a.toHashmap())
         .addOnSuccessListener(
                 new OnSuccessListener<Void>() {
