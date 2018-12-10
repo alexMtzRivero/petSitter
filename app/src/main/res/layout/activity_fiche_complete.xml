@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="right|center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvDateBegin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="du 30 novembre 2018"
+                    android:textColor="@color/colorText"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tvDateEnd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="au 15 décembre 2018"
+                    android:textColor="@color/colorText"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tvPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="15€/jour"
+                    android:textColor="@color/colorAccentR"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgPet"
+                    android:layout_width="match_parent"
+                    android:layout_height="63dp"
+                    android:layout_margin="16dp"
+                    app:srcCompat="@drawable/ic_launcher_foreground" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Butternut"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvSpecies"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Chat"
+                            android:textColor="@color/colorText"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/tvAge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="18 ans"
+                            android:textColor="@color/colorText"
+
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chat très gentil et calin. Aime dormir collé au radiateur. Un peu grogon de temps en temps. "
+                    android:textColor="@color/colorText"
+                    android:textSize="18sp" />
+
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_margin="12dp"
+                android:background="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/tvMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recherche personne aimant les chats pour venir nourrir Butternet, changer sa littière et passer un peu de temps tout les jours avec lui. Il a besoin de son quota de calins dans la journée. Idéalement un passage par jour et de préférence le soir. Butternut a un traitement à suivre à la lettre."
+                android:textColor="@color/colorText"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvDateBegin2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="du 30 novembre 2018"
+                android:textColor="@color/colorText"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvDateEnd2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="au 15 décembre 2018"
+                android:textColor="@color/colorText"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvPrice2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15€/jour"
+                android:textColor="@color/colorText"
+                android:textSize="18sp" />
+
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_margin="12dp"
+                android:background="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/tvProprio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Marie Grandspieds"
+                android:textColor="@color/colorText"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvAdresse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="14 avenue des Champs Elysées"
+                android:textColor="@color/colorText"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="38000 Grenoble"
+                android:textColor="@color/colorText"
+                android:textSize="18sp" />
+
+
+            <View
+                android:id="@+id/divider4"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_margin="12dp"
+                android:background="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Candidature"
+                android:textAlignment="viewStart"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/CandidatTel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ruru les petits pieds"
+                android:textColor="@color/colorText"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/CandidatMail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ruru@frfr.com"
+                android:textColor="@color/colorText"
+                android:textSize="18sp" />
+
+
+            <TextView
+                android:id="@+id/tvCandidatAdresse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="25 98 65 74 25"
+                android:textColor="@color/colorText"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvCandidatCP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="158 rue des muffins au chocolat"
+                android:textColor="@color/colorText"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvCandidatVille"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="38000 Grenoble"
+                android:textColor="@color/colorText"
+                android:textSize="18sp"
+                tools:layout_editor_absoluteX="341dp"
+                tools:layout_editor_absoluteY="330dp" />
+
+            <View
+                android:id="@+id/divider5"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_margin="12dp"
+                android:background="@color/colorPrimary" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</android.support.constraint.ConstraintLayout>
