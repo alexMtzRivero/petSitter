@@ -68,8 +68,8 @@ public class ConectionDetails extends AppCompatActivity implements ConnectionLis
         TextView tvDateBegin = findViewById(R.id.tvDateBegin);
         tvDateBegin.setText(fullInformation.getC().getDateString());
 
+
         /*
-        
         tvDateBegin2
                 tvDateEnd2
         tvPrice2

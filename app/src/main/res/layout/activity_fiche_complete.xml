@@ -198,16 +198,21 @@
                 android:background="@color/colorPrimary" />
 
             <TextView
-                android:id="@+id/tvName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="Candidature"
-                android:textAlignment="viewStart"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
+            <TextView
+                android:id="@+id/CandidatNom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ruru@frfr.com"
+                android:textColor="@color/colorText"
+                android:textSize="18sp" />
             <TextView
                 android:id="@+id/CandidatTel"
                 android:layout_width="wrap_content"
@@ -216,11 +221,12 @@
                 android:textColor="@color/colorText"
                 android:textSize="18sp" />
 
+
             <TextView
-                android:id="@+id/CandidatMail"
+                android:id="@+id/tvCandidatMail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ruru@frfr.com"
+                android:text="158 rue des muffins au chocolat"
                 android:textColor="@color/colorText"
                 android:textSize="18sp" />
 
@@ -233,23 +239,6 @@
                 android:textColor="@color/colorText"
                 android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/tvCandidatCP"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="158 rue des muffins au chocolat"
-                android:textColor="@color/colorText"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/tvCandidatVille"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="38000 Grenoble"
-                android:textColor="@color/colorText"
-                android:textSize="18sp"
-                tools:layout_editor_absoluteX="341dp"
-                tools:layout_editor_absoluteY="330dp" />
 
             <View
                 android:id="@+id/divider5"

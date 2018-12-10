@@ -13,8 +13,11 @@ import com.example.alets.petsitter.ConectionDetails;
 import com.example.alets.petsitter.Login;
 import com.example.alets.petsitter.R;
 import com.example.alets.petsitter.TestActivity;
+import com.example.alets.petsitter.controlers.Personnes;
+import com.example.alets.petsitter.myConnectionDetails;
 import com.example.alets.petsitter.pojos.Animal;
 import com.example.alets.petsitter.pojos.FullInformation;
+import com.example.alets.petsitter.pojos.Personne;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -74,7 +77,10 @@ public class PetListAdapter extends RecyclerView.Adapter<PetListAdapter.MyViewHo
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(view.getContext(),ConectionDetails.class);
+                Intent i;
+                if(fi.getC().getIdPersonneAnimal().equals(Personnes.getCurrentUser().getId()))
+                 i = new Intent(view.getContext(),myConnectionDetails.class);
+                else i = new Intent(view.getContext(),ConectionDetails.class);
                 i.putExtra("fullInfo",  fi);
                 view.getContext().startActivity(i);
             }
