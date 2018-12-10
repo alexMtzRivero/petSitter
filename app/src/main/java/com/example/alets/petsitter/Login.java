@@ -161,7 +161,7 @@ public class Login extends AppCompatActivity {
         if(mUser !=null)
             Toast.makeText(getApplicationContext(),mUser.getEmail(),Toast.LENGTH_LONG).show();
         else
-            Toast.makeText(getApplicationContext(),"Utilizateur ou Mot de pase Incorrectes",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"Utilisateur ou Mot de passe Incorrect",Toast.LENGTH_LONG).show();
 
     }
     @Override
