@@ -42,6 +42,14 @@ public class UserProfile extends AppCompatActivity {
         etVille = findViewById(R.id.etVille);
 
 
+        etNom.setText(myUser.getUserName());
+
+        etTelephone.setText(myUser.getTelephone());
+                etAdresse.setText(myUser.geteMail());
+        etPostal.setText(myUser.getCodePostale());
+                etVille.setText(myUser.getDirection());
+
+
 
 
 

@@ -27,6 +27,13 @@ public class FullInfoController implements PersonneListener,AnimalListner {
             Personnes.get(FullInfoController.this,con.getIdPersonneAnimal());
 
     }
+    public Animal getAnimalByID(String id){
+        for(Animal a : fullInformation.getAnimals() ){
+            if(a.getId().equals(id))
+                return a;
+        }
+        return null;
+    }
 
     @Override
     public void onLoadAnimal(Animal a) {

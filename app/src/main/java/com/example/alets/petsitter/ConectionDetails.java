@@ -10,6 +10,7 @@ import android.widget.Toast;
 import com.example.alets.petsitter.controlers.Connections;
 import com.example.alets.petsitter.controlers.Personnes;
 import com.example.alets.petsitter.interfaces.ConnectionListener;
+import com.example.alets.petsitter.pojos.Animal;
 import com.example.alets.petsitter.pojos.Connection;
 import com.example.alets.petsitter.pojos.FullInformation;
 import com.example.alets.petsitter.pojos.Personne;
@@ -45,16 +46,16 @@ public class ConectionDetails extends AppCompatActivity implements ConnectionLis
         );
 
 
-
+        Animal a = fullInformation.getAnimalById(fullInformation.getC().getAnimaux().get(0));
         TextView tvName = findViewById(R.id.tvName);
         tvName.setText(fullInformation.getAnimals().get(0).getPrenom());
 
 
         TextView tvSpecies = findViewById(R.id.tvSpecies);
-        tvSpecies.setText(fullInformation.getAnimals().get(0).getEspece());
+        tvSpecies.setText(a.getEspece());
 
         TextView tvAge = findViewById(R.id.tvAge);
-        tvAge.setText(fullInformation.getAnimals().get(0).getAge()+" ans");
+        tvAge.setText(a.getAge()+" ans");
 
         //TextView tvDescription = findViewById(R.id.tvDescription);
         //tvDescription.setText(fullInformation.getAnimals().get(0).getSoin());
@@ -68,16 +69,11 @@ public class ConectionDetails extends AppCompatActivity implements ConnectionLis
         TextView tvDateBegin = findViewById(R.id.tvDateBegin);
         tvDateBegin.setText(fullInformation.getC().getDateString());
 
+        TextView tvPrice = findViewById(R.id.tvPrice);
+        tvPrice.setText(fullInformation.getC().getPrixString());
+        TextView tvPrice2 = findViewById(R.id.tvPrice2);
+        tvPrice2.setText(tvPrice.getText());
 
-        /*
-        tvDateBegin2
-                tvDateEnd2
-        tvPrice2
-                tvProprio
-
-        tvAdresse
-
-                tvCity*/
     }
 
     @Override
