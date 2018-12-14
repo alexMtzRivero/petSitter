@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">PetSitter</string>
+    <string-array name="Species">
+        <item>Chat</item>
+        <item>Chien</item>
+        <item>Lapin</item>
+    </string-array>
 </resources>

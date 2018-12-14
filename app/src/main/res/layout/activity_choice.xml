@@ -31,7 +31,6 @@
         android:textColor="@color/colorPrimaryDark"
         android:textColorLink="@color/colorAccentR"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/editText9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,15 +41,17 @@
         android:id="@+id/buttonProposePet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="64dp"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="352dp"
+        android:layout_marginTop="400dp"
         android:background="@color/colorPrimaryDark"
         android:text="Faire garder mon animal"
         android:textAppearance="@android:style/TextAppearance.Material.WindowTitle"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSearchPet"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -70,7 +71,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button8"
         app:layout_constraintVertical_bias="0.314" />
 
 </android.support.constraint.ConstraintLayout>

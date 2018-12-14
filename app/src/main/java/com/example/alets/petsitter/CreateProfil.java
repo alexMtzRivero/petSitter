@@ -22,6 +22,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.List;
+
 public class CreateProfil extends AppCompatActivity  implements PersonneListener{
 
     private FirebaseAuth mAuth;
@@ -63,7 +65,7 @@ public class CreateProfil extends AppCompatActivity  implements PersonneListener
     if(complete ){
         Personne p = new Personne(mAuth.getCurrentUser().getUid(),
                 mAuth.getCurrentUser().getEmail(),
-                etNom.getText().toString()+etPrenom.getText().toString(),
+                etNom.getText().toString()+" "+etPrenom.getText().toString(),
                 etTelephone.getText().toString(),
                 null,
                 etAdresse.getText().toString(),
@@ -106,7 +108,7 @@ public class CreateProfil extends AppCompatActivity  implements PersonneListener
     }
 
     @Override
-    public void onPersonneLoades(Personne[] p) {
+    public void onPersonneLoades(List<Personne> p) {
 
     }
 
@@ -119,6 +121,7 @@ public class CreateProfil extends AppCompatActivity  implements PersonneListener
     public void onPersonneUpdate(Boolean created) {
         if (created){
             Intent i = new Intent(CreateProfil.this,Feed.class);
+            i.putExtra("TypeDeRecherche","");
             startActivity(i);
 
         }

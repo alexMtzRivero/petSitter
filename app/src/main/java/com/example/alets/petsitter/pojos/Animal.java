@@ -1,11 +1,20 @@
 package com.example.alets.petsitter.pojos;
 
-public class Animal {
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class Animal implements Serializable {
 
     private String id,espece,prenom,age;
-    private String [] soin ,photos;
+    private List<String> soin ,photos;
 
-    public Animal(String id, String espece, String prenom, String age, String[] soin, String[] photos) {
+    /**
+     * donstructeur  default demandé par firebase
+     */
+    public Animal(){}
+    public Animal(String id, String espece, String prenom, String age, List<String> soin, List<String> photos) {
         this.id = id;
         this.espece = espece;
         this.prenom = prenom;
@@ -34,11 +43,11 @@ public class Animal {
         return age;
     }
 
-    public String[] getSoin() {
+    public List<String> getSoin() {
         return soin;
     }
 
-    public String[] getPhotos() {
+    public List<String>getPhotos() {
         return photos;
     }
 
@@ -54,11 +63,26 @@ public class Animal {
         this.age = age;
     }
 
-    public void setSoin(String[] soin) {
+    public void setSoin(List<String> soin) {
         this.soin = soin;
     }
 
-    public void setPhotos(String[] photos) {
+    public void setPhotos(List<String> photos) {
         this.photos = photos;
+    }
+
+    /**
+     *
+     * @return hashpap de type "nom Du variable", variabe
+     */
+    public Map<String,Object> toHashmap() {
+        HashMap<String,Object> mMap = new HashMap<>();
+        mMap.put("id",id);
+        mMap.put("espece",espece);
+        mMap.put("prenom",prenom);
+        mMap.put("age",age);
+        mMap.put("soin",soin);
+        mMap.put("photos",photos);
+        return mMap;
     }
 }

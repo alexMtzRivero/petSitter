@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".animal_profil">
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,8 +42,9 @@
             android:layout_marginEnd="64dp"
             android:layout_marginStart="64dp"
             android:layout_marginTop="8dp"
+            android:entries="@array/Species"
             android:fadeScrollbars="true"
-            android:textColor="@color/colorText" />
+            android:textColor="@color/colorText"></Spinner>
 
         <EditText
             android:id="@+id/petName"

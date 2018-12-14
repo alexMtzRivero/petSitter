@@ -16,12 +16,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-            <activity android:name=".CreateProfil"></activity>
-        <activity android:name=".Feed"></activity>
-        <activity android:name=".NewUser"></activity>
-        <activity android:name=".TestActivity"></activity>
-   
+        <activity android:name=".CreateProfil" />
+        <activity android:name=".Feed" />
+        <activity android:name=".NewUser" />
+        <activity android:name=".TestActivity" />
+        <activity android:name=".AddAnimal" />
+        <activity android:name=".ConectionDetails" />
+        <activity android:name=".UserProfile" />
+        <activity android:name=".AddRequest" />
+        <activity android:name=".Choice" />
+        <activity android:name=".myConnectionDetails"></activity>
     </application>
 
 </manifest>
