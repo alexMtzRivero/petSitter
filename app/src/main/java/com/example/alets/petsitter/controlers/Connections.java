@@ -15,17 +15,19 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
-
+/**
+ * controller between the  firebase queries and the objects type Connection
+ */
 public class Connections {
     static FirebaseFirestore db = FirebaseFirestore.getInstance();
     static String TAG = "TAG";
-/*
-query para
-    mis conneciones
 
-
- */
-
+    /**
+     * Creates  a new  Connection in the database .
+     * @param connextionListner  if the insertion was well done in the database the result  wil be returned to this object,
+     * usually the object that called this function , calling the function connextionListner.onConnectionCreated()
+     * @param con object Connection to add.
+     */
     public static void add(final ConnectionListener connextionListner, Connection con){
         db.collection("connections")
                 .add(con)
@@ -69,6 +71,12 @@ query para
                 });
 
     }
+
+    /**
+     * queries the Connections with no people to care the animal
+     * @param cl  the result  wil be returned to this class,
+     * usually the object that called this function , calling the function cl.onConnectionLoaded()
+     */
     public  static  void  getAllChechent( final ConnectionListener cl ){
 
         db.collection("connections").whereEqualTo("idPersonneAnimal",null)
@@ -82,9 +90,9 @@ query para
                                 Connection c = document.toObject(Connection.class);
                                 c.setId(document.getId());
                                 connections.add(c);
-                                cl.onConnectionLoaded(connections);
                                 Log.d(TAG, document.getId() + " => " + document.getData());
                             }
+                            cl.onConnectionLoaded(connections);
                         } else {
                             cl.onConnectionLoaded((Connection) null);
                             Log.w(TAG, "Error getting documents.", task.getException());
@@ -93,6 +101,14 @@ query para
                 });
 
     }
+
+
+
+    /**
+     * queries the Connections of the current user in Personne.currentUser()
+     * @param cl  the result  wil be returned to this class,
+     * usually the object that called this function , calling the function cl.onConnectionLoaded()
+     */
     public  static  void  getMyCandidatures( final ConnectionListener cl ){
 
         db.collection("connections").whereEqualTo("idPersonneAnimal",Personnes.getCurrentUser().getId())
@@ -106,9 +122,10 @@ query para
                                 Connection c = document.toObject(Connection.class);
                                 c.setId(document.getId());
                                 connections.add(c);
-                                cl.onConnectionLoaded(connections);
                                 Log.d(TAG, document.getId() + " => " + document.getData());
                             }
+                            cl.onConnectionLoaded(connections);
+
                         } else {
                             cl.onConnectionLoaded((Connection) null);
                             Log.w(TAG, "Error getting documents.", task.getException());
@@ -141,6 +158,13 @@ query para
                 });
 
     }
+
+    /**
+     *
+     * @param cl
+     * @param oldC
+     * @param newC
+     */
     public static void  update(final ConnectionListener cl, Connection oldC, Connection newC){
         db.collection("connections").document(oldC.getId()).update(newC.toHashmap()).addOnSuccessListener(
                 new OnSuccessListener<Void>() {

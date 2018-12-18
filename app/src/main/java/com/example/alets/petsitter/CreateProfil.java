@@ -24,6 +24,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.List;
 
+
+
 public class CreateProfil extends AppCompatActivity  implements PersonneListener{
 
     private FirebaseAuth mAuth;
@@ -31,7 +33,6 @@ public class CreateProfil extends AppCompatActivity  implements PersonneListener
     String TAG = "sdfsdf";
     EditText etNom,etPrenom,etTelephone,etAdresse,etPostal,etVille;
     Button bConfirm;
-    //todo introducir info de login
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

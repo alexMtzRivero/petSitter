@@ -22,13 +22,19 @@ import com.example.alets.petsitter.pojos.Personne;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/**
+ * Clasic adatper for the Conection items list
+ */
 public class PetListAdapter extends RecyclerView.Adapter<PetListAdapter.MyViewHolder> {
 
     private ArrayList<FullInformation> mDataset;
 
-    // Provide a reference to the views for each data item
-    // Complex data items may need more than one view per item, and
-    // you provide access to all the views for a data item in a view holder
+    /**
+     *  Provide a reference to the views for each data item
+     *  Complex data items may need more than one view per item, and
+     *  you provide access to all the views for a data item in a view holder
+     */
+
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
         public View mView;
@@ -51,12 +57,18 @@ public class PetListAdapter extends RecyclerView.Adapter<PetListAdapter.MyViewHo
 
     }
 
-    // Provide a suitable constructor (depends on the kind of dataset)
+    /**
+     * Provide a suitable constructor (depends on the kind of dataset)
+     * @param myDataset
+     */
     public PetListAdapter(ArrayList<FullInformation> myDataset) {
         mDataset = myDataset;
     }
 
-    // Create new views (invoked by the layout manager)
+    /**
+     * Create new views (invoked by the layout manager)
+      */
+
     @Override
     public PetListAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent,
                                                      int viewType) {
@@ -67,7 +79,11 @@ public class PetListAdapter extends RecyclerView.Adapter<PetListAdapter.MyViewHo
         return vh;
     }
 
-    // Replace the contents of a view (invoked by the layout manager)
+    /**
+     *  Replace the contents of a view (invoked by the layout manager)
+     * @param holder  view holder
+     * @param position position in the list
+     */
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         // - get element from your dataset at this position
@@ -96,11 +112,18 @@ public class PetListAdapter extends RecyclerView.Adapter<PetListAdapter.MyViewHo
         holder.tvPlace.setText(fi.getpAnimal().getCodePostale());
 
     }
+
+    /**
+     * changes the full dataset of the adapter
+     * @param dataset new dataset
+     */
     public  void setmDataset(ArrayList<FullInformation> dataset){
         mDataset = dataset;
     }
 
-    // Return the size of your dataset (invoked by the layout manager)
+    /**
+     * @return the size of your dataset (invoked by the layout manager)
+     */
     @Override
     public int getItemCount() {
         return mDataset.size();

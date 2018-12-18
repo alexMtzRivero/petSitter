@@ -17,12 +17,20 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
+/**
+ * controller betwen the  firebase querties and the objects type Animal
+ */
 public class Animales {
     static FirebaseFirestore db = FirebaseFirestore.getInstance();
     static ArrayList<Animal> myAnimals;
     static Boolean myAnimalsReady;
     static String TAG = "TAG";
 
+    /**
+     * queries all de animal of an espesific user.
+     * @param al the list of all the animals wil be returned to this class, usualy the object that called this function, calling the function al.onload()
+     * @param idUser id of the user to search.
+     */
     public static void getAll(final AnimalListner al , String idUser){
         db.collection("users").document(idUser).collection("animales")
                 .get()
@@ -46,6 +54,9 @@ public class Animales {
                 });
     }
 
+    /**
+     * queries the animals of the current user to and it set it to the static variable "my animals"
+     */
     public static void setMyStatic() {
         db.collection("users").document(Personnes.getCurrentUser().getId()).collection("animales")
                 .get()
@@ -78,7 +89,12 @@ public class Animales {
         return myAnimalsReady;
     }
 
-
+    /**
+     * updates  an  animal of an specific user.
+     * @param al if the update was well done in the database the result  wil be returned to this class, usualy the object that called this function, calling the function al.onAnimalUpdated()
+     * @param a object animal to update.
+     * @param p the object Personne, the owner of the animal.
+     */
     public  void update(final AnimalListner al, Animal a , Personne p){
        db.collection("users").document(p.getId()).collection("animales").document(a.getId()).update(a.toHashmap())
         .addOnSuccessListener(
@@ -96,7 +112,13 @@ public class Animales {
         });
 
    }
-
+    /**
+     * Creates  a new  animal of an specific user in the database .
+     * @param al if the insertion was well done in the database the result  wil be returned to this class,
+     * usually the object that called this function , calling the function al.onAnimalCreated()
+     * @param a object animal to add.
+     * @param p the object Personne, the owner of the animal.
+     */
     public static void add(final AnimalListner al, Animal a , Personne p){
         db.collection("users").document(p.getId()).collection("animales")
                 .add(a)
