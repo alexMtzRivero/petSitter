@@ -12,9 +12,9 @@ import com.example.alets.petsitter.controlers.Animales;
 import com.example.alets.petsitter.controlers.Personnes;
 import com.example.alets.petsitter.interfaces.AnimalListner;
 import com.example.alets.petsitter.pojos.Animal;
-import com.example.alets.petsitter.pojos.Personne;
 
 import java.util.List;
+
 
 public class AddAnimal extends AppCompatActivity implements AnimalListner {
    EditText petName,petAge;

@@ -5,14 +5,18 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * Plane old java object to handle as objects the information of the connections
+ */
 public class Connection implements Serializable {
 
     String id, idPersonneAnimal,idGardeur,description,date,dateFin;
     List<String> idAnimaux;
     int prix;
 
-
+    /**
+     * Constructeur  default demandé par firebase
+     */
     public Connection(){};
     public Connection(String id,String idPersonneAnimal, String idGardeur, String description, List<String> animaux, int prix, String date1,String date2) {
         this.id =id;

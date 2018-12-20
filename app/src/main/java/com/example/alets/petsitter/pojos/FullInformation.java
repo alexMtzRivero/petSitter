@@ -1,16 +1,13 @@
 package com.example.alets.petsitter.pojos;
 
-import com.example.alets.petsitter.controlers.Animales;
-import com.example.alets.petsitter.controlers.FullInfoController;
-import com.example.alets.petsitter.controlers.Personnes;
-import com.example.alets.petsitter.interfaces.AnimalListner;
-import com.example.alets.petsitter.interfaces.FullConnectionListener;
-import com.example.alets.petsitter.interfaces.PersonneListener;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
 
+
+/**
+ * object that handles the full information of a connection , not as id's but as real objects
+ */
 public class FullInformation implements  Serializable {
     private Connection c;
     private Personne pAnimal,pGardeur;
@@ -18,7 +15,9 @@ public class FullInformation implements  Serializable {
     private Boolean aSearched;
 
 
-
+    /**
+     * Constructeur  default demandé par firebase
+     */
     public  FullInformation(){
     }
 

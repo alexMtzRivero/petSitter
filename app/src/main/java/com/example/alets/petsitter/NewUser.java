@@ -135,7 +135,7 @@ public class NewUser extends AppCompatActivity implements PersonneListener{
     }
 
     @Override
-    public void onPersonneLoades(List<Personne> p) {
+    public void onPersonneLoaded(List<Personne> p) {
 
     }
 

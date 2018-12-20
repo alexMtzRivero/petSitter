@@ -3,12 +3,16 @@ package com.example.alets.petsitter.pojos;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
-
+/**
+ * Plane old java object to handle as objects the information of the users as Personne
+ */
 public class Personne implements Serializable {
 
    private String id,userName,eMail,telephone,photo,direction,codePostale;
 
-
+    /**
+     * Constructeur  default demandé par firebase
+     */
    public Personne(){}
     public Personne(String id,String eMail, String userName, String telephone, String photo, String direction, String codePostale) {
         this.id = id;

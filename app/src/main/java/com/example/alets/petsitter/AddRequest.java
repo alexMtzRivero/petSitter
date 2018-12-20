@@ -46,6 +46,7 @@ public class AddRequest extends AppCompatActivity implements DatePickerDialog.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_request);
+        setTitle("Creer");
 
         btnRequest = findViewById(R.id.btnRequest);
         eTDu = findViewById(R.id.eTDu);

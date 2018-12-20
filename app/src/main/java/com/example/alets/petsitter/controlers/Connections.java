@@ -73,7 +73,7 @@ public class Connections {
     }
 
     /**
-     * queries the Connections with no people to care the animal
+     * queries the Connections with no animals to care
      * @param cl  the result  wil be returned to this class,
      * usually the object that called this function , calling the function cl.onConnectionLoaded()
      */
@@ -134,6 +134,11 @@ public class Connections {
                 });
 
     }
+    /**
+     * queries the Connections with no people to care the animal
+     * @param cl  the result  wil be returned to this class,
+     * usually the object that called this function , calling the function cl.onConnectionLoaded()
+     */
     public  static  void  getAllSansGardeurs( final ConnectionListener cl ){
 
         db.collection("connections").whereEqualTo("idGardeur",null)
@@ -147,9 +152,10 @@ public class Connections {
                                 Connection c = document.toObject(Connection.class);
                                 c.setId(document.getId());
                                 connections.add(c);
-                                cl.onConnectionLoaded(connections);
+
                                 Log.d(TAG, document.getId() + " => " + document.getData());
                             }
+                            cl.onConnectionLoaded(connections);
                         } else {
                             cl.onConnectionLoaded((Connection) null);
                             Log.w(TAG, "Error getting documents.", task.getException());
@@ -161,9 +167,10 @@ public class Connections {
 
     /**
      *
-     * @param cl
-     * @param oldC
-     * @param newC
+     * @param cl the result  wil be returned to this class as a boolean ,
+     * usually the object that called this function , calling the function cl.onConnectionUpdated()
+     * @param oldC old object of the connection
+     * @param newC new object of the connection
      */
     public static void  update(final ConnectionListener cl, Connection oldC, Connection newC){
         db.collection("connections").document(oldC.getId()).update(newC.toHashmap()).addOnSuccessListener(

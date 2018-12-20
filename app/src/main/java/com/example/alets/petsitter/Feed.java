@@ -90,7 +90,10 @@ public class Feed extends AppCompatActivity implements AnimalListner,ConnectionL
             @Override
             public void onClick(View view) {
                 myDataset = new ArrayList<>();
+                mAdapter.setmDataset(myDataset);
+                mAdapter.notifyDataSetChanged();
                 Connections.getAllSansGardeurs(Feed.this);
+                setTitle("Candidatures");
             }
         });
 
@@ -102,7 +105,10 @@ public class Feed extends AppCompatActivity implements AnimalListner,ConnectionL
             @Override
             public void onClick(View view) {
                 myDataset = new ArrayList<>();
+                mAdapter.setmDataset(myDataset);
+                mAdapter.notifyDataSetChanged();
                 Connections.getMyCandidatures(Feed.this);
+                setTitle("Mes candidatures");
             }
         });
 

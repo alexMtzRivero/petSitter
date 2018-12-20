@@ -5,13 +5,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Plane old java object to handle as objects the information of Anmal
+ */
 public class Animal implements Serializable {
 
     private String id,espece,prenom,age;
     private List<String> soin ,photos;
 
     /**
-     * donstructeur  default demandé par firebase
+     * Constructeur  default demandé par firebase
      */
     public Animal(){}
     public Animal(String id, String espece, String prenom, String age, List<String> soin, List<String> photos) {

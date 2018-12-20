@@ -19,6 +19,7 @@ public class UserProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profil);
+        setTitle("Mon profil");
 
         bAjouterAnimal = findViewById(R.id.bAjouterAnimal);
         bDeconnexion = findViewById(R.id.bDeconnexion);

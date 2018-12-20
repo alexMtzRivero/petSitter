@@ -10,12 +10,20 @@ import com.example.alets.petsitter.pojos.Personne;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Manager between the  firebase queries and the objects type Connection,Animales and Personnes
+ */
 public class FullInfoController implements PersonneListener,AnimalListner {
 
     private FullConnectionListener fullConnectionListener;
     private FullInformation fullInformation;
 
+    /**
+     * constructor of the class, imediatley begins the queries of each object inside "con"
+     * @param fcl full connection listener , the results of the queries, updates or insertions  wil be returned to this class,
+     * usually the object that called this function
+     * @param con the object witch we want the full information
+     */
     public  FullInfoController(FullConnectionListener fcl,Connection con){
 
         fullConnectionListener = fcl;
@@ -70,9 +78,10 @@ public class FullInfoController implements PersonneListener,AnimalListner {
     }
 
     @Override
-    public void onPersonneLoades(List<Personne> p) {
+    public void onPersonneLoaded(List<Personne> p) {
 
     }
+
 
     @Override
     public void onPersonneCreated(Boolean created) {

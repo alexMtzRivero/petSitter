@@ -16,10 +16,16 @@ import com.google.firebase.firestore.QuerySnapshot;
 public class Personnes {
 
     static FirebaseFirestore db = FirebaseFirestore.getInstance();
-    static  private  String TAG = "tag";
-    static private Personne je;
-    public static Personne get(final PersonneListener pl, String id){
 
+    static private Personne je;
+
+    /**
+     * gets an specific user
+     * @param pl  the result  wil be returned to this class,
+     * usually the object that called this function , calling the function  pl.onPersonneLoaded()
+     * @param id id of the user searched
+     */
+    public static void get(final PersonneListener pl, String id){
         db.collection("users")
                 .document(id).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
@@ -30,11 +36,9 @@ public class Personnes {
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                pl.onPersonneLoaded(null);
+                pl.onPersonneLoaded((Personne) null);
             }
         });
-
-        return null;
     }
     public static void setActualUser(Personne p){
         je = p;
